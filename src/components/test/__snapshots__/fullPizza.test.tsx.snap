@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`is pizza displayed when data is received successfully 1`] = `
+<div
+  class="container"
+  data-testid="container-element"
+>
+  <img
+    alt="testTitle"
+    src="testImageUrl"
+  />
+  <h2>
+    testTitle
+  </h2>
+  <h4>
+    testPrice
+     руб.
+  </h4>
+</div>
+`;
+
+exports[`отображается ли пицца при успешном получении данных 1`] = `
+<div
+  class="container"
+  data-testid="container-element"
+>
+  <img
+    alt="testTitle"
+    src="testImageUrl"
+  />
+  <h2>
+    testTitle
+  </h2>
+  <h4>
+    testPrice
+     руб.
+  </h4>
+</div>
+`;
