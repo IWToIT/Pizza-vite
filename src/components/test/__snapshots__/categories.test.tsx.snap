@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`highlighting the active category 1`] = `
+<div
+  class="categories"
+  data-testid="cat-element"
+>
+  <ul>
+    <li
+      class=""
+    >
+      Все
+    </li>
+    <li
+      class=""
+    >
+      Мясные
+    </li>
+    <li
+      class="active"
+    >
+      Вегетарианская
+    </li>
+    <li
+      class=""
+    >
+      Гриль
+    </li>
+    <li
+      class=""
+    >
+      Острые
+    </li>
+    <li
+      class=""
+    >
+      Закрытые
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`выделение активной категории 1`] = `
+<div
+  class="categories"
+  data-testid="cat-element"
+>
+  <ul>
+    <li
+      class=""
+    >
+      Все
+    </li>
+    <li
+      class=""
+    >
+      Мясные
+    </li>
+    <li
+      class="active"
+    >
+      Вегетарианская
+    </li>
+    <li
+      class=""
+    >
+      Гриль
+    </li>
+    <li
+      class=""
+    >
+      Острые
+    </li>
+    <li
+      class=""
+    >
+      Закрытые
+    </li>
+  </ul>
+</div>
+`;

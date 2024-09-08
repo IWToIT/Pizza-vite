@@ -1,0 +1,33 @@
+@import '../variables';
+
+.categories {
+  &__list {
+    display: flex;
+
+    &-item {
+      background-color: $gray-line;
+      padding: 13px 30px;
+      border-radius: 30px;
+      margin-right: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.1s ease-in-out;
+      @include noselect();
+
+      &:hover {
+        background-color: darken($gray-line, 2%);
+      }
+
+      &--active {
+        background-color: $black;
+        color: $white;
+        padding: 13px 30px;
+        border-radius: 30px;
+        margin-right: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.1s ease-in-out;
+      }
+    }
+  }
+}
