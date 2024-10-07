@@ -25,15 +25,19 @@ export const PizzaBlock: React.FC<PizzaBlockProps> = ({
   types,
 }) => {
   const dispatch = useDispatch();
-  const cartItem = useSelector(selectCartItemById(id));
+  const cartItem: CartItem = useSelector(selectCartItemById(id));
   const [activeType, setActiveType] = React.useState(0);
   const [activeSize, setActiveSize] = React.useState(0);
+  console.log(cartItem)
 
-  const addedCount = cartItem ? cartItem.count : 0;
+  const generateUniqueId: CartItem = (id: string, type: string, size: number) => {
+    return `${id}_${type}_${size}`;
+  };
 
   const onClickAdd = () => {
+    const uniqueId = generateUniqueId(id, activeType, activeSize);
     const item: CartItem = {
-      id,
+      id: uniqueId,
       title,
       price,
       imageUrl,
@@ -42,6 +46,7 @@ export const PizzaBlock: React.FC<PizzaBlockProps> = ({
       count: 0,
     };
     dispatch(addItem(item));
+    console.log(item);
   };
 
   return (
@@ -69,7 +74,7 @@ export const PizzaBlock: React.FC<PizzaBlockProps> = ({
               onClick={() => setActiveSize(sizeIndex)}
               className={`pizza-block__size-item${activeSize === sizeIndex ? '--active' : ''}`}
             >
-              {size} см.
+              {size} см
             </li>
           ))}
         </ul>
@@ -89,7 +94,6 @@ export const PizzaBlock: React.FC<PizzaBlockProps> = ({
               />
             </svg>
             <span>В корзину</span>
-            {addedCount > 0 && <i>{addedCount}</i>}
           </button>
         </div>
       </div>
