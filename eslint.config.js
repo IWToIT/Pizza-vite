@@ -6,10 +6,18 @@ import pluginReact from 'eslint-plugin-react';
 export default [
   {
     rules: {
-      "@typescript-eslint/no-explicit-any": 0,
-      "react/react-in-jsx-scope": 0,
-      "react/display-name": 0,
-      "react/prop-types": "off"
+      'react/react-in-jsx-scope': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      'react/display-name': 'off',
+      'react/prop-types': 'off',
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      'react/no-unescaped-entities': 'off',
+      'prettier/prettier': [
+        'error',
+        {
+          endOfLine: 'auto',
+        },
+      ],
     },
   },
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
