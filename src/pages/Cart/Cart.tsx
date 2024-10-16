@@ -18,9 +18,9 @@ const Cart: React.FC = () => {
     }
   };
 
-  if (!totalPrice) {
-    return <CartEmpty />;
-  }
+  // if (!totalPrice) {
+  //   return <CartEmpty />;
+  // }
 
   return (
     <div className="container container--cart">
@@ -133,9 +133,9 @@ const Cart: React.FC = () => {
               </svg>
               <span>Вернуться назад</span>
             </Link>
-            <div className="button pay-btn">
+            <Link to="/cart/payment" className="button pay-btn">
               <span>Оплатить сейчас</span>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

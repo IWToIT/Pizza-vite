@@ -16,11 +16,14 @@ const CartItem: React.FC<CartItemType> = ({ id, title, type, size, price, count,
         id,
       } as CartItemType),
     );
-    console.log(dispatch)
+    console.log(id, count);
   };
 
   const onClickMinus = () => {
     dispatch(minusItem(id));
+    if (count === 1) {
+      dispatch(removeItem(id));
+    }
   };
 
   const onClickRemove = () => {
@@ -42,7 +45,6 @@ const CartItem: React.FC<CartItemType> = ({ id, title, type, size, price, count,
       </div>
       <div className="cart__item-count">
         <button
-          disabled={count === 0}
           onClick={onClickMinus}
           className="button button--outline button--circle cart__item-count-minus"
         >

@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
 const Cart = lazy(() => import('./pages/Cart').then(module => ({ default: module.Cart })));
+const Payment = lazy(() => import('./pages/Payment').then(module => ({ default: module.Payment })));
 const FullPizza = lazy(() =>
   import('./pages/FullPizza').then(module => ({ default: module.FullPizza })),
 );
@@ -17,7 +18,9 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route path="" element={<Home />} />
-          <Route path="cart" element={<Cart />} />
+          <Route path="cart" element={<Cart />}>
+            <Route path="payment" element={<Payment />} />
+          </Route>
           <Route path="pizza/:id" element={<FullPizza />} />
           <Route path="*" element={<NotFound />} />
         </Route>
