@@ -19,7 +19,7 @@ export const App = () => {
         <Route path="/" element={<MainLayout />}>
           <Route path="" element={<Home />} />
           <Route path="cart" element={<Cart />}>
-            <Route path="payment" element={<Payment onSubmit={(() => {})} />} />
+            <Route path="payment" element={<Payment onSubmit={() => {}} />} />
           </Route>
           <Route path="pizza/:id" element={<FullPizza />} />
           <Route path="*" element={<NotFound />} />
