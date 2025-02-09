@@ -3,10 +3,6 @@ import { useDispatch } from 'react-redux';
 import { Sort as SortType, SortPropertyEnum } from '@/redux/filter/types';
 import { setSort } from '@/redux/filter/slice';
 
-type PopupClick = MouseEvent & {
-  path: Node[];
-};
-
 type SortPopupProps = {
   value: SortType;
 };
@@ -33,7 +29,6 @@ const Sort: React.FC<SortPopupProps> = React.memo(({ value }) => {
 
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const _event = event as PopupClick;
 
       if (sortRef.current && !event.composedPath().includes(sortRef.current)) {
         setOpen(false);

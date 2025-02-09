@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
 const Cart = lazy(() => import('./pages/Cart').then(module => ({ default: module.Cart })));
@@ -19,7 +19,7 @@ export const App = () => {
         <Route path="/" element={<MainLayout />}>
           <Route path="" element={<Home />} />
           <Route path="cart" element={<Cart />}>
-            <Route path="payment" element={<Payment />} />
+            <Route path="payment" element={<Payment onSubmit={(() => {})} />} />
           </Route>
           <Route path="pizza/:id" element={<FullPizza />} />
           <Route path="*" element={<NotFound />} />

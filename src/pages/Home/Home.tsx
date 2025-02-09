@@ -1,23 +1,17 @@
 import React from 'react';
-import qs from 'qs';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '@/redux/store';
 import { Categories } from '@/components/Categories';
 import { Sort } from '@/components/Sort';
 import { PizzaBlock } from '@/components/PizzaBlock';
 import Skeleton from '@/components/PizzaBlock/Skeleton';
-import { sortList } from '@/components/Sort/Sort';
 import { selectFilter } from '@/redux/filter/selectors';
 import { selectPizzaData } from '@/redux/pizza/selectors';
-import { setCategoryId, setFilters } from '@/redux/filter/slice';
+import { setCategoryId } from '@/redux/filter/slice';
 import { fetchPizzas } from '@/redux/pizza/asyncActions';
-import { SearchPizzaParams } from '@/redux/pizza/types';
 
 export const Home: React.FC = () => {
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const isMounted = React.useRef(false);
 
   const { items, status } = useSelector(selectPizzaData);
   const { categoryId, sort, searchValue } = useSelector(selectFilter);

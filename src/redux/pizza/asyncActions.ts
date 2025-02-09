@@ -24,3 +24,4 @@ export const fetchPizzas = createAsyncThunk<TPizza[], SearchPizzaParams>(
     return data;
   },
 );
+
